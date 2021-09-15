@@ -6,6 +6,14 @@ const DECREASE = "DECREASE";
 export const increase = () => ({ type: INCREASE });
 export const decrease = () => ({ type: DECREASE });
 
+// getState를 쓰지 않는다면 파라미터로 받아올 필요가 없다.
+export const increaseAsync = () => (dispatch) => {
+  setTimeout(() => dispatch(increase()), 1000);
+};
+export const decreaseAsync = () => (dispatch) => {
+  setTimeout(() => dispatch(decrease()), 1000);
+};
+
 // 초깃값 (상태가 객체가 아니여서 단순 선언 OK!)
 const initialState = 0;
 
