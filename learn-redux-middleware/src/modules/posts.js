@@ -14,13 +14,14 @@ const GET_POSTS_ERROR = "GET_POSTS_ERROR"; // 요청 실패
 
 // 포스트 하나 조회
 const GET_POST = "GET_POST";
-const GET_POST_SUCCESS = "GET_POST_SUCESS";
+const GET_POST_SUCCESS = "GET_POST_SUCCESS";
 const GET_POST_ERROR = "GET_POST_ERROR";
 
 // util에 정의해둔 함수로, thunk 함수 만듬
 export const getPosts = createPromiseThunk(GET_POSTS, postsAPI.getPosts);
 export const getPost = createPromiseThunk(GET_POST, postsAPI.getPostById);
 
+// 리팩토링 완료
 const initialState = {
   posts: reducerUtils.initial(),
   post: reducerUtils.initial(),
